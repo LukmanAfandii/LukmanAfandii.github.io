@@ -8,7 +8,7 @@ interface SectionProps {
 
 export const Section = ({children, className}: SectionProps) => {
   return (
-    <div className={`flex items-center py-10 px-9 max-w-7xl mx-auto flex-wrap ${className}`}>
+    <div className={`flex items-center py-10 px-9 max-w-7xl mx-auto flex-wrap ${className} dark:bg-[#101926] dark:text-[#FFFFFF]`}>
         {children}
     </div>
   )

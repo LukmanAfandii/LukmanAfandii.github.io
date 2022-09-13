@@ -7,24 +7,23 @@ import CardImage from './components/CardImage';
 import CardFloatText from './components/CardFloatText';
 
 
-function App() {
-  // 2. Wrap ChakraProvider at the root of your app
+function App() {  
   return (
-    <>
-      <Navbar />
-      <main className="overflow-hidden">
+    <div >
+      <Navbar toggleTheme={() => {}}/>
+      <main className="overflow-hidden dark:bg-[#101926]">
         <Section className='h-[100vh] mt-0 md:mt-[-56px]'>
           <div className="order-2 w-full md:w-2/4 md:order-1">
             <div className="md:max-w-[30rem] max-w-[13rem] text-center md:text-left mx-auto md:mx-0">
-              <h1 className="text-3xl font-semibold text-gray-800 md:text-6xl md:mt-0 mt-7">Hi! I Am Lukman Afandi</h1>
+              <h1 className="text-3xl font-semibold text-gray-800  dark:text-[#FFFFFF] md:text-6xl md:mt-0 mt-7">Hi! I Am Lukman Afandi</h1>
               <p className="mt-5 text-sm font-normal md:text-2xl md:mt-10">Freelance Web Developer based in Probolinggo, Indonesia</p>
-              <button className="md:mt-10 mt-5 mx-auto md:mx-0  block h-11 w-40 rounded-lg bg-[#8CB893] text-center text-base font-semibold text-white hover:bg-[#719A78]">Hire Me</button>
+              <button className="md:mt-10 mt-5 mx-auto md:mx-0  block h-11 w-40 rounded-lg bg-[#8CB893] text-center text-base font-semibold text-white hover:bg-[#719A78] dark:bg-[#55E6A5] dark:text-[#101926]">Hire Me</button>
             </div>
           </div>
           <div className="relative order-1 w-full md:w-2/4 md:order-2">
             <div className="mx-auto w-44 h-64 md:w-72 md:h-96 after:-z-10  rounded-full bg-[#405744] bg-opacity-10 relative">
-              <div className="w-full h-full overflow-hidden rounded-full">
-                <img src="/assets/Lukman Afandi.png" alt="" srcSet="" className="object-contain w-full h-full" />
+              <div className="w-full h-full overflow-hidden rounded-full">              
+                <img src="/assets/Lukman Afandi.png" alt="" srcSet="" className="object-contain w-full h-full dark:bg-[#55E6A5]"/>              
               </div>
               <img src="/assets/figma-logo.png" alt="" srcSet="" className="absolute right-0 z-50 animate-bounce bottom-3/4 animation-delay-2000" />
               <img src="/assets/react-logo.png" alt="" srcSet="" className="absolute right-0 z-50 animate-bounce top-3/4 animation-delay-3000" />
@@ -43,10 +42,10 @@ function App() {
         <Section>
           <h1 className="w-full text-3xl font-semibold md:text-6xl">My Projects</h1>
           <div className="flex flex-wrap items-center justify-around gap-5">
-            <div className="md:w-2/5 w-full rounded-2xl bg-[#FFEBE0] bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
+            <div className="md:w-2/5 w-full rounded-2xl bg-[#FFEBE0] dark:bg-opacity-100 bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
               <div className="absolute -left-[12%] -bottom-[12%] h-5/6 w-5/6  rounded-full  mix-blend-multiply filter blur-2xl bg-[#FFBCBC]"></div>
               <div className="relative p-10 pb-0">
-                <h2 className="text-2xl font-medium">
+                <h2 className="text-2xl font-medium dark:text-[#101926]">
                   BEM-KM Polije Website
                 </h2>
                 <CardImage src='/assets/bem-web-project.png' />
@@ -54,10 +53,10 @@ function App() {
                 <CardFloatText text='Next JS' bgColor='bg-gray-600' />
               </div>
             </div>
-            <div className="md:w-2/5 w-full rounded-2xl bg-[#E0FBFF] bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
+            <div className="md:w-2/5 w-full rounded-2xl bg-[#E0FBFF] dark:bg-opacity-100 bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
               <div className="absolute -right-[12%] -bottom-[12%] h-5/6 w-5/6  rounded-full  mix-blend-multiply filter blur-2xl bg-[#A0A4FF]"></div>
               <div className="relative p-10 pb-0">
-                <h2 className="text-2xl font-medium">
+                <h2 className="text-2xl font-medium dark:text-[#101926]">
                   HMJTI Website
                 </h2>
                 <CardImage src='/assets/hmjti-web-project.png' />
@@ -66,10 +65,10 @@ function App() {
 
               </div>
             </div>
-            <div className="md:w-2/5 w-full rounded-2xl bg-[#E0FFE3] bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
+            <div className="md:w-2/5 w-full rounded-2xl bg-[#E0FFE3] dark:bg-opacity-100 bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
               <div className="absolute -left-[12%] -bottom-[12%] h-5/6 w-5/6  rounded-full  mix-blend-multiply filter blur-2xl bg-[#8EFFBB]"></div>
               <div className="relative p-10 pb-0">
-                <h2 className="text-2xl font-medium">
+                <h2 className="text-2xl font-medium dark:text-[#101926]">
                   Explore Indonesia
                 </h2>
                 <CardImage src='/assets/explore-indonesia-project.png' />
@@ -131,26 +130,26 @@ function App() {
           <ul className='space-y-2 list-inside'>
             <li>
               <a href="mail:lukmanafandi10@gmail.com" target="_blank" rel="noreferrer" className='flex items-center gap-2'>
-                <img src="/assets/mail.svg" alt="" className='inline w-6 h-6' />
-                <span>lukmanafandi10@gmail</span>
+                <img src="/assets/mail.svg" alt="" className='inline w-6 h-6 dark:invert' />
+                <span className='dark:text-white'>lukmanafandi10@gmail</span>
               </a>
             </li>
             <li>
               <a href="https://instagram.com/lukmanafandii" target="_blank" rel="noreferrer" className='flex items-center gap-2'>
-                <img src="/assets/instagram.svg" alt="" className='inline w-6 h-6' />
-                <span>Lukmanafandii</span>
+                <img src="/assets/instagram.svg" alt="" className='inline w-6 h-6 dark:invert' />
+                <span className='dark:text-white'>Lukmanafandii</span>
               </a>
             </li>
             <li>
               <a href="https://github.com/CodeVectorizer" target="_blank" rel="noreferrer" className='flex items-center gap-2'>
-                <img src="/assets/github.svg" alt="" className='inline w-6 h-7' />
-                <span>Codevectorizer</span>
+                <img src="/assets/github.svg" alt="" className='inline w-6 h-7 dark:invert' />
+                <span className='dark:text-white'>Codevectorizer</span>
               </a>
             </li>            
             <li>
               <a href="https://www.linkedin.com/in/lukman-afandi-9a883b177/" target="_blank" rel="noreferrer" className='flex items-center gap-2'>
-                <img src="/assets/linkedin.svg" alt="" className='inline w-6 h-6' />
-                <span>Lukmana Afandi</span>
+                <img src="/assets/linkedin.svg" alt="" className='inline w-6 h-6 dark:invert' />
+                <span className='dark:text-white'>Lukman Afandi</span>
               </a>
             </li>                        
           </ul>
@@ -159,7 +158,7 @@ function App() {
           <p className='w-full text-center'>2022 Codevector Made by ♡</p>
         </Section>
       </main>
-    </>
+    </div>
   )
 }
 

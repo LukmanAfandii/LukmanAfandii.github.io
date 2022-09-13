@@ -1,41 +1,120 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export const Navbar: React.FC = () => {
+type NavbarProps = {
+  className?: string | ''
+  toggleTheme: () => void
+}
+export const Navbar = ({ toggleTheme }: NavbarProps) => {
+
   // Navbar hidden state
   const [hiddenNav, setHiddenNav] = useState(true)
-  // Toggle navbar hidden state
-  const toggleHidden = () => {
-    setHiddenNav(!hiddenNav);
+
+  const [swithTheme, setSwithTheme] = useState(false)
+
+  useEffect(() => {
+    // click outside navbar to hide and not sidebar
+    const clickOutside = (e: any) => {
+      if (e.target.closest("#sidebar") || e.target.closest("#btnSidebar")) {
+        return;
+      }
+      setHiddenNav(true);
+
+    }
+    // add click event listener
+    document.addEventListener("click", clickOutside);
+    // remove click event listener
+    return () => document.removeEventListener("click", clickOutside);
+  }, [])
+
+  const _toggleDarkMode = () => {
+    toggleTheme()
+    // toggle dark mode
+    const body = document.querySelector("body");
+    if (body) {
+      body.classList.toggle("dark");
+      setSwithTheme(!swithTheme);
+    }
+
   }
+
   return (
     <>
-      <nav className="relative overflow-x-hidden">
-        <div className="relative flex flex-wrap items-center justify-between mx-auto h-14 max-w-7xl px-9">
+      <nav className="dark:bg-[#101926] dark:text-white relative overflow-x-hidden" id="navbar">
+        <div className="flex flex-wrap items-center justify-between mx-auto h-14 max-w-7xl px-9">
           <h3 className="text-2xl font-semibold">Codevector</h3>
 
           {/* Start Hamburger Menu Button */}
-          <span className="block cursor-pointer md:hidden" onClick={() => toggleHidden()}>
+          <span id="btnSidebar" className="block cursor-pointer md:hidden" onClick={() => {
+            setHiddenNav((prev) => !prev);
+          }}>
             <svg className="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </span>
           {/* End Hamburger Menu Button */}
+
+          {/* Switch Button Toggle Dark Mode*/}
+          <div className="items-center hidden md:flex ">
+            <span className="mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+              </svg>
+
+            </span>
+            <label className="flex items-center cursor-pointer">
+              <div className="relative">
+                <input type="checkbox" className="sr-only" onChange={_toggleDarkMode} />
+                <div className="block h-8 dark:bg-[#55E6A5] bg-[#101926] rounded-full w-14"></div>
+                <div className={`absolute w-6 h-6 transition bg-white dark:bg-[#101926] rounded-full dot top-1 ${!swithTheme ? 'left-1' : 'right-1'}`}></div>
+              </div>
+            </label>
+            <span className="ml-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
+              </svg>
+
+            </span>
+          </div>
+          {/* End Switch Button Toggle Dark Mode*/}
         </div>
 
-        {/* Start Mobile Menu */}
-        <div className={`${hiddenNav ? "hidden" : "flex"} inset-x-0 top-14 flex-col py-2 shadow-sm md:hidden`}>
-          <a href="" className="py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">Home</a>
-          <a href="" className="py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">About Me</a>
-          <a href="" className="py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">My Projects</a>
-          <button className="mx-9 mt-4 block h-11 rounded-lg bg-[#8CB893] text-center text-base font-semibold text-white hover:bg-[#719A78]">Contact Me</button>
-        </div>
-        {/* End Mobile Menu */}
+
 
       </nav>
+      {/* Start Mobile Menu */}
+      <div id="sidebar" className={` transition-all duration-500 dark:bg-[#0c131e] dark:text-white bg-gray-50 ease-in-out w-1/2 fixed z-[51] pt-14 inset-y-0 flex-col py-2 shadow-sm md:hidden ${hiddenNav ? "-left-96" : "left-0"}`}>
+        <div className="flex items-center mb-10 text-2xl font-bold px-9">
+          Codevector
+          <div className="flex items-center md:hidden mx-9">
+          <span className="mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+              <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+            </svg>
 
+          </span>
+          <label className="flex items-center cursor-pointer">
+            <div className="relative">
+              <input type="checkbox" className="sr-only" onChange={_toggleDarkMode} />
+              <div className="block h-6 dark:bg-[#55E6A5] bg-[#101926] rounded-full w-10"></div>
+              <div className={`absolute w-4 h-4 transition bg-white dark:bg-[#101926] rounded-full dot top-1 ${!swithTheme ? 'left-1' : 'right-1'}`}></div>
+            </div>
+          </label>
+          <span className="ml-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+              <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
+            </svg>
 
-      
+          </span>
+        </div>
+          </div>
+        
+        <a href="" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">Home</a>
+        <a href="" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">About Me</a>
+        <a href="" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">My Projects</a>
+        <button className="dark:bg-[#55E6A5] dark:text-[#101926] mx-9 mt-4 px-4 block h-11 rounded-lg bg-[#8CB893] text-center text-base font-semibold text-white hover:bg-[#719A78]">Contact Me</button>
 
+      </div>
+      {/* End Mobile Men} */}
     </>
   )
 }

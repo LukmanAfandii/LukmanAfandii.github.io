@@ -43,6 +43,13 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         <div className="flex flex-wrap items-center justify-between mx-auto h-14 max-w-7xl px-9">
           <h3 className="text-2xl font-semibold">Codevector</h3>
 
+{/* Navbar */}
+          <div className="items-center hidden space-x-4 md:flex ">
+          <a href="#home" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">Home</a>
+        <a href="#my-projects" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">My Projects</a>
+        <a href="#about-me" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">About Me</a>
+        </div>
+
           {/* Start Hamburger Menu Button */}
           <span id="btnSidebar" className="block cursor-pointer md:hidden" onClick={() => {
             setHiddenNav((prev) => !prev);
@@ -51,7 +58,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </span>
-          {/* End Hamburger Menu Button */}
+          {/* End Hamburger Menu Button */}          
 
           {/* Switch Button Toggle Dark Mode*/}
           <div className="items-center hidden md:flex ">
@@ -83,31 +90,29 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
       </nav>
       {/* Start Mobile Menu */}
       <div id="sidebar" className={` transition-all duration-500 dark:bg-[#0c131e] dark:text-white bg-gray-50 ease-in-out w-1/2 fixed z-[51] pt-14 inset-y-0 flex-col py-2 shadow-sm md:hidden ${hiddenNav ? "-left-96" : "left-0"}`}>
-        <div className="flex items-center mb-10 text-2xl font-bold px-9">
-          Codevector
-          <div className="flex items-center md:hidden mx-9">
-          <span className="mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-              <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-            </svg>
+        <div className="flex flex-wrap items-center mb-10 text-2xl font-bold px-9">
+          <span>Codevector</span>
+          <div className="flex items-center mt-4 md:hidden">
+            <span className="mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+              </svg>
 
-          </span>
-          <label className="flex items-center cursor-pointer">
-            <div className="relative">
-              <input type="checkbox" className="sr-only" onChange={_toggleDarkMode} />
-              <div className="block h-6 dark:bg-[#55E6A5] bg-[#101926] rounded-full w-10"></div>
-              <div className={`absolute w-4 h-4 transition bg-white dark:bg-[#101926] rounded-full dot top-1 ${!swithTheme ? 'left-1' : 'right-1'}`}></div>
-            </div>
-          </label>
-          <span className="ml-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-              <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
-            </svg>
-
-          </span>
-        </div>
+            </span>
+            <label className="flex items-center cursor-pointer">
+              <div className="relative">
+                <input type="checkbox" className="sr-only" onChange={_toggleDarkMode} />
+                <div className="block h-6 dark:bg-[#55E6A5] bg-[#101926] rounded-full w-10"></div>
+                <div className={`absolute w-4 h-4 transition bg-white dark:bg-[#101926] rounded-full dot top-1 ${!swithTheme ? 'left-1' : 'right-1'}`}></div>
+              </div>
+            </label>
+            <span className="ml-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
+              </svg>
+            </span>
           </div>
-        
+        </div>
         <a href="" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">Home</a>
         <a href="" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">About Me</a>
         <a href="" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">My Projects</a>

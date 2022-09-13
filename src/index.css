@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;  
+@layer utilities{
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    },
+    .animation-delay-3000 {
+        animation-delay: 3s;
+    },
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+}

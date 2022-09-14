@@ -8,7 +8,7 @@ interface CardImageProps {
 const CardImage = ({src,alt}:CardImageProps) => {
   return (
     <div>
-    <img src={src} alt="" className="object-contain transition-transform duration-1000 ease-in-out scale-125 hover:scale-150" />
+    <img src={src} alt="" className="object-contain transition-transform duration-1000 ease-in-out scale-125 pointer-events-none hover:scale-150" />
     </div>
   )
 }

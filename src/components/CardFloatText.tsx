@@ -8,7 +8,7 @@ interface CardFloatTextProps {
 
 const CardFloatText = ({bgColor,text,textWhite=true}: CardFloatTextProps) => {    
   return (
-    <span className={`cursor-default relative px-5 py-2 font-bold ${bgColor} rounded-full bottom-6 shadow-lg mx-1 ${textWhite?'text-white':'text-gray-900'}`}>{text}</span>
+    <span className={`cursor-default relative md:px-5 px-3 py-1 md:py-2 md:text-base text-sm  font-bold ${bgColor} rounded-full bottom-4 md:bottom-6 shadow-lg mx-1 ${textWhite?'text-white':'text-gray-900'}`}>{text}</span>
   )
 }
 

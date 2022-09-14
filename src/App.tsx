@@ -15,7 +15,7 @@ function App() {
     <div >
       <Navbar toggleTheme={() => { }} />
       <main className="overflow-hidden dark:bg-[#101926]">
-        <Section id='home' className='h-[100vh] mt-0 md:mt-[-56px]'>
+        <Section id='home' className='h-[100vh - 70px] py-9 mt-0 md:mt-[-56px]'>
           <div className="order-2 w-full md:w-2/4 md:order-1">
             <div className="md:max-w-[30rem] max-w-[13rem] text-center md:text-left mx-auto md:mx-0">
               <h1 className="text-3xl font-semibold text-gray-800  dark:text-[#FFFFFF] md:text-6xl md:mt-0 mt-7">Hi! I Am Lukman Afandi</h1>
@@ -40,13 +40,13 @@ function App() {
                     drag
                     dragConstraints={constraintsRef}
                   >
-                    <img src="/assets/Lukman Afandi.png" alt="" srcSet="" className="pointer-events-none object-contain w-full h-full dark:bg-[#55E6A5]" />
+                    <img src="/assets/Lukman Afandi.png" alt="" srcSet="" className="h-64 pointer-events-none object-contain w-full dark:bg-[#55E6A5]" />
                   </motion.div>
                 </motion.div>
               </div>
-              <img src="/assets/figma-logo.png" alt="" srcSet="" className="absolute right-0 z-50 animate-bounce bottom-3/4 animation-delay-2000" />
-              <img src="/assets/react-logo.png" alt="" srcSet="" className="absolute right-0 z-50 animate-bounce top-3/4 animation-delay-3000" />
-              <img src="/assets/vscode-logo.png" alt="" srcSet="" className="absolute z-50 translate-y-1/2 animate-bounce bottom-1/2 -left-10 animation-delay-4000" />
+              <img src="/assets/figma-logo.png" alt="" srcSet="" className="absolute right-0 z-50 md:h-auto h-11 animate-bounce bottom-3/4 animation-delay-2000" />
+              <img src="/assets/react-logo.png" alt="" srcSet="" className="absolute right-0 z-50 animate-bounce md:h-auto h-11 top-3/4 animation-delay-3000" />
+              <img src="/assets/vscode-logo.png" alt="" srcSet="" className="absolute z-50 h-16 translate-y-1/2 animate-bounce md:h-auto bottom-1/2 -left-10 animation-delay-4000" />
 
             </div>
             <div className="absolute inset-0 top-0 -z-10">
@@ -87,7 +87,7 @@ function App() {
           <div className="flex flex-wrap items-center justify-around gap-5">
             <div className="md:w-2/5 w-full rounded-2xl bg-[#FFEBE0] dark:bg-opacity-100 bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
               <div className="absolute -left-[12%] -bottom-[12%] h-5/6 w-5/6  rounded-full  mix-blend-multiply filter blur-2xl bg-[#FFBCBC]"></div>
-              <div className="relative p-10 pb-0">
+              <div className="relative p-6 pb-0 md:p-10">
                 <h2 className="text-2xl font-medium dark:text-[#101926]">
                   BEM-KM Polije Website
                 </h2>
@@ -98,7 +98,7 @@ function App() {
             </div>
             <div className="md:w-2/5 w-full rounded-2xl bg-[#E0FBFF] dark:bg-opacity-100 bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
               <div className="absolute -right-[12%] -bottom-[12%] h-5/6 w-5/6  rounded-full  mix-blend-multiply filter blur-2xl bg-[#A0A4FF]"></div>
-              <div className="relative p-10 pb-0">
+              <div className="relative p-6 pb-0 md:p-10">
                 <h2 className="text-2xl font-medium dark:text-[#101926]">
                   HMJTI Website
                 </h2>
@@ -110,7 +110,7 @@ function App() {
             </div>
             <div className="md:w-2/5 w-full rounded-2xl bg-[#E0FFE3] dark:bg-opacity-100 bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
               <div className="absolute -left-[12%] -bottom-[12%] h-5/6 w-5/6  rounded-full  mix-blend-multiply filter blur-2xl bg-[#8EFFBB]"></div>
-              <div className="relative p-10 pb-0">
+              <div className="relative p-6 pb-0 md:p-10">
                 <h2 className="text-2xl font-medium dark:text-[#101926]">
                   Explore Indonesia
                 </h2>
@@ -124,12 +124,12 @@ function App() {
         <Section id='about-me' className='relative justify-around'>
           <div className="w-full mb-8 md:w-1/2 ">
             <h1 className="w-full text-3xl font-semibold md:text-6xl">About Me</h1>
-            <p className="text-base">
+            <p className="text-base text-justify md:text-left">
               In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.
             </p>
           </div>
           <div className="w-full pr-5 mb-8 md:w-1/2">
-            <hr className='w-2/3 mb-5 border-t-4 border-t-gray-900' />
+            <hr className='w-2/3 mb-1 border-t-4 md:mb-5 border-t-gray-900' />
             <h1 className="w-full mb-2 text-3xl font-semibold md:text-5xl">Stacks</h1>
             <ul className='list-disc list-inside'>
               <li>React JS, Next JS, Typescript</li>
@@ -140,7 +140,7 @@ function App() {
             </ul>
           </div>
           <div className="w-full pr-5 mb-8 md:w-1/2">
-            <hr className='w-2/3 mb-5 border-t-4 border-t-gray-900' />
+            <hr className='w-2/3 mb-1 border-t-4 md:mb-5 border-t-gray-900' />
             <h1 className="w-full mb-2 text-3xl font-semibold md:text-5xl">Activities</h1>
             <ul className='list-disc list-inside'>
               <li>Learning</li>
@@ -150,7 +150,7 @@ function App() {
             </ul>
           </div>
           <div className="w-full pr-5 mb-8 md:w-1/2">
-            <hr className='w-2/3 mb-5 border-t-4 border-t-gray-900' />
+            <hr className='w-2/3 mb-1 border-t-4 md:mb-5 border-t-gray-900' />
             <h1 className="w-full mb-2 text-3xl font-semibold md:text-5xl">Tools</h1>
             <ul className='list-disc list-inside'>
               <li>VS Code</li>

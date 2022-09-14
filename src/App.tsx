@@ -15,7 +15,7 @@ function App() {
     <div >
       <Navbar toggleTheme={() => { }} />
       <main className="overflow-hidden dark:bg-[#101926]">
-        <Section id='home' className='h-[100vh - 70px] py-9 mt-0 md:mt-[-56px]'>
+        <Section id='home' className='h-[100vh - 70px] md:h-screen py-9 mt-0 md:mt-[-56px]'>
           <div className="order-2 w-full md:w-2/4 md:order-1">
             <div className="md:max-w-[30rem] max-w-[13rem] text-center md:text-left mx-auto md:mx-0">
               <h1 className="text-3xl font-semibold text-gray-800  dark:text-[#FFFFFF] md:text-6xl md:mt-0 mt-7">Hi! I Am Lukman Afandi</h1>
@@ -40,7 +40,7 @@ function App() {
                     drag
                     dragConstraints={constraintsRef}
                   >
-                    <img src="/assets/Lukman Afandi.png" alt="" srcSet="" className="h-64 pointer-events-none object-contain w-full dark:bg-[#55E6A5]" />
+                    <img src="/assets/Lukman Afandi.png" alt="" srcSet="" className="h-64 md:h-96 pointer-events-none object-contain w-full dark:bg-[#55E6A5]" />
                   </motion.div>
                 </motion.div>
               </div>
@@ -87,7 +87,7 @@ function App() {
           <div className="flex flex-wrap items-center justify-around gap-5">
             <div className="md:w-2/5 w-full rounded-2xl bg-[#FFEBE0] dark:bg-opacity-100 bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
               <div className="absolute -left-[12%] -bottom-[12%] h-5/6 w-5/6  rounded-full  mix-blend-multiply filter blur-2xl bg-[#FFBCBC]"></div>
-              <div className="relative p-6 pb-0 md:p-10">
+              <div className="relative p-6 pb-0 md:p-10 md:pb-0">
                 <h2 className="text-2xl font-medium dark:text-[#101926]">
                   BEM-KM Polije Website
                 </h2>
@@ -98,7 +98,7 @@ function App() {
             </div>
             <div className="md:w-2/5 w-full rounded-2xl bg-[#E0FBFF] dark:bg-opacity-100 bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
               <div className="absolute -right-[12%] -bottom-[12%] h-5/6 w-5/6  rounded-full  mix-blend-multiply filter blur-2xl bg-[#A0A4FF]"></div>
-              <div className="relative p-6 pb-0 md:p-10">
+              <div className="relative p-6 pb-0 md:p-10 md:pb-0">
                 <h2 className="text-2xl font-medium dark:text-[#101926]">
                   HMJTI Website
                 </h2>
@@ -110,7 +110,7 @@ function App() {
             </div>
             <div className="md:w-2/5 w-full rounded-2xl bg-[#E0FFE3] dark:bg-opacity-100 bg-opacity-60 mt-9 relative overflow-hidden shadow-lg">
               <div className="absolute -left-[12%] -bottom-[12%] h-5/6 w-5/6  rounded-full  mix-blend-multiply filter blur-2xl bg-[#8EFFBB]"></div>
-              <div className="relative p-6 pb-0 md:p-10">
+              <div className="relative p-6 pb-0 md:p-10 md:pb-0">
                 <h2 className="text-2xl font-medium dark:text-[#101926]">
                   Explore Indonesia
                 </h2>
@@ -168,7 +168,7 @@ function App() {
             <span className="absolute top-60 right-0 inline-block h-[464px] w-[464px] rounded-full bg-[#7d84ff] bg-opacity-30 mix-blend-multiply blur-2xl animate-blob animation-delay-4000"></span>
           </div>
         </Section>
-        <Section id='find-me'>
+        <Section id='find-me' className='h-screen'>
           <h1 className="w-full mb-3 text-3xl font-semibold md:text-6xl">Find Me</h1>
           <ul className='space-y-2 list-inside'>
             <li>

@@ -139,6 +139,7 @@ function App() {
               <li>Git, Github</li>
             </ul>
           </div>
+          <div className="flex flex-wrap w-full">
           <div className="w-full pr-5 mb-8 md:w-1/2">
             <hr className='w-2/3 mb-1 border-t-4 md:mb-5 border-t-gray-900' />
             <h1 className="w-full mb-2 text-3xl font-semibold md:text-5xl">Activities</h1>
@@ -161,6 +162,7 @@ function App() {
               <li>Chrome</li>
             </ul>
           </div>
+          </div>
           <div className="absolute inset-0 top-0 -z-10">
             <span className="absolute top-20 left-0 inline-block h-[564px] w-[564px] rounded-full bg-[#FFBCBC] bg-opacity-30 mix-blend-multiply blur-2xl animate-blob animation-delay-2000"></span>
             {/* <span className="absolute bottom-0 left-0 inline-block h-[364px] w-[364px] rounded-full bg-[#F6FFBC] mix-blend-multiply blur-2xl animate-blob animation-delay-4000"></span> */}
@@ -168,7 +170,7 @@ function App() {
             <span className="absolute top-60 right-0 inline-block h-[464px] w-[464px] rounded-full bg-[#7d84ff] bg-opacity-30 mix-blend-multiply blur-2xl animate-blob animation-delay-4000"></span>
           </div>
         </Section>
-        <Section id='find-me' className='h-screen'>
+        <Section id='find-me' className=''>
           <h1 className="w-full mb-3 text-3xl font-semibold md:text-6xl">Find Me</h1>
           <ul className='space-y-2 list-inside'>
             <li>

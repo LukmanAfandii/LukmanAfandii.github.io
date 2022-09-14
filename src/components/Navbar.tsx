@@ -129,8 +129,8 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
 
       </nav>
       {/* Start Mobile Menu */}
-      <div id="sidebar" className={` transition-all duration-500 dark:bg-[#0c131e] dark:text-white bg-gray-50 ease-in-out w-1/2 fixed z-[51] pt-14 inset-y-0 flex-col py-2 shadow-sm md:hidden ${hiddenNav ? "-left-96" : "left-0"}`}>
-        <div className="flex flex-wrap items-center mb-10 text-2xl font-bold px-9">
+      <div id="sidebar" className={` transition-all duration-500 dark:bg-[#0c131e] dark:text-white bg-gray-50 ease-in-out fixed w-full max-w-[329px] z-[51] pt-14 inset-y-0 flex-col py-2 shadow-sm md:hidden ${hiddenNav ? "-left-96" : "left-0"}`}>
+        <div className="flex flex-wrap items-center px-4 mb-10 text-lg font-bold">
           <span>Codevector</span>
           <div onClick={_toggleDarkMode} className="z-50 p-1 ml-auto rounded-full hover:dark:bg-white hover:bg-[#0c131e] hover:dark:bg-opacity-30 hover:bg-opacity-30">
                 {
@@ -147,10 +147,10 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
 
               </div>
         </div>
-        <a href="" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">Home</a>
-        <a href="" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">About Me</a>
-        <a href="" className="block py-2 mt-1 px-9 hover:bg-gray-50 hover:bg-opacity-40">My Projects</a>
-        <button className="dark:bg-[#55E6A5] dark:text-[#101926] mx-9 mt-4 px-4 block h-11 rounded-lg bg-[#8CB893] text-center text-base font-semibold text-white hover:bg-[#719A78]">Contact Me</button>
+        <a href="" className="block px-4 py-2 mt-1 hover:bg-gray-50 hover:bg-opacity-40">Home</a>
+        <a href="" className="block px-4 py-2 mt-1 hover:bg-gray-50 hover:bg-opacity-40">About Me</a>
+        <a href="" className="block px-4 py-2 mt-1 hover:bg-gray-50 hover:bg-opacity-40">My Projects</a>
+        <button className="dark:bg-[#55E6A5] dark:text-[#101926] mt-4 mx-4 px-4 block h-11 rounded-lg bg-[#8CB893] text-center text-base font-semibold text-white hover:bg-[#719A78]">Contact Me</button>
 
       </div>
       {/* End Mobile Men} */}
